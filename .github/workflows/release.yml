@@ -1,0 +1,119 @@
+name: Build and Release Resource Pack
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on tags starting with 'v'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Package Resource Pack
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create resource pack directory
+        run: |
+          mkdir -p tooltips-dlp8-resourcepack
+          cp -r assets tooltips-dlp8-resourcepack/
+          cp pack.mcmeta tooltips-dlp8-resourcepack/
+          cp README.md tooltips-dlp8-resourcepack/
+
+      - name: Create resource pack zip
+        run: |
+          cd tooltips-dlp8-resourcepack
+          zip -r ../tooltips-dlp8-resourcepack.zip .
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resource-pack
+          path: tooltips-dlp8-resourcepack.zip
+
+  release:
+    name: Release Resource Pack
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for proper changelog generation
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: resource-pack
+          path: ./
+
+      - name: Set version variables
+        id: set_version
+        run: |
+          VERSION_WITHOUT_V=${GITHUB_REF_NAME#v}
+          echo "version_without_v=$VERSION_WITHOUT_V" >> $GITHUB_OUTPUT
+          
+          # Extract pack name from pack.mcmeta
+          PACK_NAME=$(grep -o '"name": "[^"]*"' pack.mcmeta | cut -d'"' -f4)
+          echo "pack_name=$PACK_NAME" >> $GITHUB_OUTPUT
+
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          # Get all tags and sort them
+          git tag --sort=-version:refname > tags.txt
+          
+          # Get the current tag
+          CURRENT_TAG="${{ github.ref_name }}"
+          echo "Current tag: $CURRENT_TAG"
+          
+          # Find the previous tag (skip the current one)
+          PREVIOUS_TAG=""
+          while IFS= read -r tag; do
+            if [ "$tag" != "$CURRENT_TAG" ]; then
+              PREVIOUS_TAG="$tag"
+              break
+            fi
+          done < tags.txt
+          
+          echo "Previous tag: $PREVIOUS_TAG"
+          
+          if [ -n "$PREVIOUS_TAG" ]; then
+            echo "Generating changelog between $PREVIOUS_TAG and $CURRENT_TAG"
+            CHANGELOG=$(git log --pretty=format:"- %s (%h)" $PREVIOUS_TAG..$CURRENT_TAG)
+            COMPARE_URL="https://github.com/${{ github.repository }}/compare/$PREVIOUS_TAG...$CURRENT_TAG"
+          else
+            echo "No previous tag found, using recent commits"
+            CHANGELOG=$(git log --pretty=format:"- %s (%h)" -10)
+            COMPARE_URL="https://github.com/${{ github.repository }}/commits/$CURRENT_TAG"
+          fi
+          
+          # Create changelog content
+          {
+            echo "changelog<<EOF"
+            echo "## Changes in $CURRENT_TAG"
+            echo ""
+            echo "**Full Changelog**: [$PREVIOUS_TAG...$CURRENT_TAG]($COMPARE_URL)"
+            echo ""
+            echo "$CHANGELOG"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3.0
+        with:
+          modrinth-id: vvvveYgC
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          name: ${{ steps.set_version.outputs.pack_name }} ${{ steps.set_version.outputs.version_without_v }}
+          files: tooltips-dlp8-resourcepack.zip
+          changelog: ${{ steps.changelog.outputs.changelog }}
+          loaders: fabric
+          game-versions: 1.21.6
+          version-type: release
+          dependencies: |
+            - a3pNGPtw
