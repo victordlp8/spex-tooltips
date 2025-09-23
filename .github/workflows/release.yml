@@ -17,17 +17,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create resource pack directory
-        run: |
-          mkdir -p tooltips-dlp8-resourcepack
-          cp -r assets tooltips-dlp8-resourcepack/
-          cp pack.mcmeta tooltips-dlp8-resourcepack/
-          cp README.md tooltips-dlp8-resourcepack/
-
       - name: Create resource pack zip
         run: |
-          cd tooltips-dlp8-resourcepack
-          zip -r ../tooltips-dlp8-resourcepack.zip .
+          zip -r tooltips-dlp8-resourcepack.zip assets/ pack.mcmeta README.md
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
