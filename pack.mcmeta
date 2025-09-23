@@ -1,12 +1,12 @@
 {
   "pack": {
-    "description": "Tooltips DLP8 - CivLabs Classes Configuration",
+    "description": "Tooltips DLP8 - SpEx Classes Configuration",
     "pack_format": 71,
     "supported_formats": {
       "min_inclusive": 71,
       "max_inclusive": 71
     }
   },
-  "name": "CivLabs Classes Configuration",
+  "name": "SpEx Classes Configuration",
   "version": "0.1.0",
 }
