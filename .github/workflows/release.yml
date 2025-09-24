@@ -109,6 +109,7 @@ jobs:
           name: ${{ steps.set_version.outputs.pack_name }} ${{ steps.set_version.outputs.version_without_v }}
           files: "*.zip"
           changelog: ${{ steps.changelog.outputs.changelog }}
+          loaders: minecraft
           game-versions: 1.21.6
           version-type: release
           dependencies: |
