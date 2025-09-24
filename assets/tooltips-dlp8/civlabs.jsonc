@@ -20,9 +20,8 @@
   //   "item_id": "#color1text#n#color2more text"
   //
   "minecraft:netherite_upgrade_smithing_template": "#7e8c8dBlacksmith#n#f1c40fBuilder#n#2dc26bFarmer#n#e03e2dGuardsman#n#b96ad9Healer#n#3598dbLibrarian#n#ecf0f1Miner",
-  "minecraft:stone": "#ecf0f1Miner#reset +1 #80ff20EXP#reset when mined#n#f1c40fBuilder#reset +1 #80ff20EXP#reset when used in the stonecutter",
 
-  // Blacksmith
+  // Blacksmith ==================================================
   // 1 × planks used
   "minecraft:wooden_sword": "#7e8c8dBlacksmith#reset +2 #80ff20EXP#reset when crafted",
   "minecraft:wooden_shovel": "#7e8c8dBlacksmith#reset +1 #80ff20EXP#reset when crafted",
@@ -37,12 +36,22 @@
   "minecraft:stone_pickaxe": "#7e8c8dBlacksmith (1)#reset +6 #80ff20EXP#reset when crafted",
   "minecraft:stone_hoe": "#7e8c8dBlacksmith (1)#reset +4 #80ff20EXP#reset when crafted",
 
+  "minecraft:leather_helmet": "#7e8c8dBlacksmith (1)#reset +20 #80ff20EXP#reset when crafted",
+  "minecraft:leather_chestplate": "#7e8c8dBlacksmith (1)#reset +28 #80ff20EXP#reset when crafted",
+  "minecraft:leather_leggings": "#7e8c8dBlacksmith (1)#reset +24 #80ff20EXP#reset when crafted",
+  "minecraft:leather_boots": "#7e8c8dBlacksmith (1)#reset +16 #80ff20EXP#reset when crafted",
+
   // 4 × iron used
   "minecraft:iron_sword": "#7e8c8dBlacksmith (2)#reset +8 #80ff20EXP#reset when crafted",
   "minecraft:iron_shovel": "#7e8c8dBlacksmith (2)#reset +4 #80ff20EXP#reset when crafted",
   "minecraft:iron_axe": "#7e8c8dBlacksmith (2)#reset +12 #80ff20EXP#reset when crafted",
   "minecraft:iron_pickaxe": "#7e8c8dBlacksmith (2)#reset +12 #80ff20EXP#reset when crafted",
   "minecraft:iron_hoe": "#7e8c8dBlacksmith (2)#reset +8 #80ff20EXP#reset when crafted",
+
+  "minecraft:iron_helmet": "#7e8c8dBlacksmith (2)#reset +20 #80ff20EXP#reset when crafted",
+  "minecraft:iron_chestplate": "#7e8c8dBlacksmith (2)#reset +28 #80ff20EXP#reset when crafted",
+  "minecraft:iron_leggings": "#7e8c8dBlacksmith (2)#reset +24 #80ff20EXP#reset when crafted",
+  "minecraft:iron_boots": "#7e8c8dBlacksmith (2)#reset +16 #80ff20EXP#reset when crafted",
 
   // 6 × gold used
   "minecraft:golden_sword": "#7e8c8dBlacksmith (3)#reset +12 #80ff20EXP#reset when crafted",
@@ -51,12 +60,22 @@
   "minecraft:golden_pickaxe": "#7e8c8dBlacksmith (3)#reset +18 #80ff20EXP#reset when crafted",
   "minecraft:golden_hoe": "#7e8c8dBlacksmith (3)#reset +12 #80ff20EXP#reset when crafted",
 
+  "minecraft:golden_helmet": "#7e8c8dBlacksmith (3)#reset +30 #80ff20EXP#reset when crafted",
+  "minecraft:golden_chestplate": "#7e8c8dBlacksmith (3)#reset +48 #80ff20EXP#reset when crafted",
+  "minecraft:golden_leggings": "#7e8c8dBlacksmith (3)#reset +42 #80ff20EXP#reset when crafted",
+  "minecraft:golden_boots": "#7e8c8dBlacksmith (3)#reset +24 #80ff20EXP#reset when crafted",
+
   // 8 × diamond used
   "minecraft:diamond_sword": "#7e8c8dBlacksmith (4)#reset +16 #80ff20EXP#reset when crafted",
   "minecraft:diamond_shovel": "#7e8c8dBlacksmith (4)#reset +8 #80ff20EXP#reset when crafted",
   "minecraft:diamond_axe": "#7e8c8dBlacksmith (4)#reset +24 #80ff20EXP#reset when crafted",
   "minecraft:diamond_pickaxe": "#7e8c8dBlacksmith (4)#reset +24 #80ff20EXP#reset when crafted",
   "minecraft:diamond_hoe": "#7e8c8dBlacksmith (4)#reset +16 #80ff20EXP#reset when crafted",
+
+  "minecraft:diamond_helmet": "#7e8c8dBlacksmith (4)#reset +40 #80ff20EXP#reset when crafted",
+  "minecraft:diamond_chestplate": "#7e8c8dBlacksmith (4)#reset +64 #80ff20EXP#reset when crafted",
+  "minecraft:diamond_leggings": "#7e8c8dBlacksmith (4)#reset +56 #80ff20EXP#reset when crafted",
+  "minecraft:diamond_boots": "#7e8c8dBlacksmith (4)#reset +32 #80ff20EXP#reset when crafted",
 
   // 32 × netherite used (this is fully estimated based on gold and diamond costs)
   "minecraft:netherite_sword": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
@@ -65,16 +84,72 @@
   "minecraft:netherite_pickaxe": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
   "minecraft:netherite_hoe": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
 
-  // Builder
-  // Farmer
-  // Guardsman
-  // Healer
-  // Librarian
-  // Miner
+  "minecraft:netherite_helmet": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
+  "minecraft:netherite_chestplate": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
+  "minecraft:netherite_leggings": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
+  "minecraft:netherite_boots": "#7e8c8dBlacksmith (5)#reset +32 #80ff20EXP#reset when crafted",
 
-  "minecraft:golden_apple": "#b96ad9Healer's Blessing#n#resetRestores health and grants temporary effects",
-  "minecraft:book": "#3598dbLibrarian's Knowledge#n#resetContains ancient wisdom and spells",
-  "minecraft:carrot": "#2dc26bFarmer's Harvest#n#resetFresh from the fields",
-  "minecraft:crafting_table": "#f1c40fBuilder's Workbench#n#resetWhere creativity becomes reality",
-  "minecraft:anvil": "#7e8c8dBlacksmith's Forge#n#resetWhere metal is shaped and strengthened"
+  // Other
+  "#minecraft:logs_that_burn": "#7e8c8dBlacksmith#reset +2 #80ff20EXP#reset when smelted",
+  "minecraft:raw_copper": "#7e8c8dBlacksmith#reset +3 #80ff20EXP#reset when smelted#n#ecf0f1Miner (1)#reset +4 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (2)#reset +6 #80ff20EXP#reset when mined in deepslate level",
+  "minecraft:raw_iron": "#7e8c8dBlacksmith#reset +6 #80ff20EXP#reset when smelted#n#ecf0f1Miner (2)#reset +8 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (3)#reset +10 #80ff20EXP#reset when mined in deepslate level",
+  "minecraft:raw_gold": "#7e8c8dBlacksmith#reset +8 #80ff20EXP#reset when smelted#n#ecf0f1Miner (3)#reset +12 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (4)#reset +14 #80ff20EXP#reset when mined in deepslate level",
+
+  // Builder ==================================================
+  "#minecraft:axes": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when stripping bark",
+  "#minecraft:shovels": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when used to make a path",
+
+  "minecraft:smooth_stone": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when placed#n#f1c40fBuilder#reset +6 #80ff20EXP#reset when smelted",
+  "minecraft:wool": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when placed",
+  "#minecraft:wooden_slabs": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when placed",
+  "minecraft:stone_bricks": "#f1c40fBuilder#reset +3 #80ff20EXP#reset when placed",
+  "minecraft:string": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when placed",
+  "minecraft:tripwire_hook": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when placed",
+
+  "minecraft:brick": "#f1c40fBuilder#reset +2 #80ff20EXP#reset when smelted",
+  "minecraft:glass": "#f1c40fBuilder#reset +1 #80ff20EXP#reset when smelted",
+  "minecraft:stone": "#ecf0f1Miner#reset +1 #80ff20EXP#reset when mined#n#f1c40fBuilder#reset +1 #80ff20EXP#reset when used in the stonecutter#n#f1c40fBuilder#reset +3 #80ff20EXP#reset when smelted",
+
+  // Farmer ==================================================
+  "minecraft:wheat_seeds": "#2dc26bFarmer#reset +1 #80ff20EXP#reset when braking short grass",
+  "minecraft:wheat": "#2dc26bFarmer#reset +5 #80ff20EXP#reset when harvesting wheat",
+  "minecraft:carrot": "#2dc26bFarmer#reset +4 #80ff20EXP#reset when harvesting carrots",
+  "minecraft:sugar_cane": "#2dc26bFarmer#reset +1 #80ff20EXP#reset when harvesting sugar cane",
+
+  "minecraft:bread": "#2dc26bFarmer (1)#reset +2 #80ff20EXP#reset when crafting bread",
+
+  "minecraft:dried_kelp": "#2dc26bFarmer#reset +3 #80ff20EXP#reset when cooked (not in campfire)",
+  "minecraft:cooked_cod": "#2dc26bFarmer#reset +2 #80ff20EXP#reset when cooked (not in campfire)",
+  "minecraft:cooked_salmon": "#2dc26bFarmer#reset +3 #80ff20EXP#reset when cooked (not in campfire)",
+  "minecraft:cooked_chicken": "#2dc26bFarmer#reset +3 #80ff20EXP#reset when cooked (not in campfire)",
+  "minecraft:cooked_porkchop": "#2dc26bFarmer#reset +4 #80ff20EXP#reset when cooked (not in campfire)",
+  "minecraft:cooked_beef": "#2dc26bFarmer#reset +4 #80ff20EXP#reset when cooked (not in campfire)",
+
+  // Guardsman ==================================================
+  "minecraft:gunpowder": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Creeper",
+  "minecraft:redstone": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Witch#n#ecf0f1Miner (3)#reset +7 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (4)#reset +9 #80ff20EXP#reset when mined in deepslate level",
+  "minecraft:rotten_flesh": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Zombie something",
+  "minecraft:spider_eye": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Spider",
+  "minecraft:ender_pearl": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Enderman",
+  "minecraft:bone": "#e03e2dGuardsman#reset +12 #80ff20EXP#reset when killing a Skeleton",
+  
+  // Healer ==================================================
+  "minecraft:paper": "#b96ad9Healer#reset +9 #80ff20EXP#reset when crafting paper#n#b96ad9Healer#reset +3 #80ff20EXP#reset when crafting bandages#n#b96ad9Healer (1)#reset +15 #80ff20EXP#reset when healing a player",
+
+  // Librarian ==================================================
+  "minecraft:book": "#3598dbLibrarian#reset +3 #80ff20EXP#reset when crafting",
+  "minecraft:bookshelf": "#3598dbLibrarian (1)#reset +3 #80ff20EXP#reset when crafting",
+  "minecraft:writable_book": "#3598dbLibrarian (1)#reset +6 #80ff20EXP#reset when crafting",
+  "minecraft:lectern": "#3598dbLibrarian (1)#reset +3 #80ff20EXP#reset when crafting",
+  "minecraft:map": "#3598dbLibrarian (2)",
+  "minecraft:cartography_table": "#3598dbLibrarian (2)",
+  "minecraft:loom": "#3598dbLibrarian (2)",
+
+  // Miner ==================================================
+  "minecraft:coal": "#ecf0f1Miner#reset +3 #80ff20EXP#reset when mined",
+  "minecraft:amethyst_shard": "#ecf0f1Miner#reset +4 #80ff20EXP#reset when mined",
+  "minecraft:deepslate": "#ecf0f1Miner (1)#reset +2 #80ff20EXP#reset when mined",
+
+  "minecraft:lapis_lazuli": "#ecf0f1Miner (3)#reset +7 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (4)#reset +9 #80ff20EXP#reset when mined in deepslate level",
+  "minecraft:diamond": "#ecf0f1Miner (4)#reset +18 #80ff20EXP#reset when mined in stone level#n#ecf0f1Miner (5)#reset +20 #80ff20EXP#reset when mined in deepslate level"
 }
