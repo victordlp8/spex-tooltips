@@ -19,13 +19,18 @@ jobs:
 
       - name: Create resource pack zip
         run: |
-          zip -r tooltips-dlp8-resourcepack.zip assets/ pack.mcmeta README.md
+          # Extract name and version from pack.mcmeta
+          PACK_NAME=$(grep -o '"name": "[^"]*"' pack.mcmeta | cut -d'"' -f4 | tr -d ' ')
+          VERSION=$(grep -o '"version": "[^"]*"' pack.mcmeta | cut -d'"' -f4 | tr -d ' ')
+          FILENAME="${PACK_NAME}-${VERSION}.zip"
+          zip -r "$FILENAME" assets/ pack.mcmeta README.md
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: resource-pack
-          path: tooltips-dlp8-resourcepack.zip
+          path: "*.zip"
 
   release:
     name: Release Resource Pack
@@ -102,9 +107,9 @@ jobs:
           modrinth-id: vvvveYgC
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           name: ${{ steps.set_version.outputs.pack_name }} ${{ steps.set_version.outputs.version_without_v }}
-          files: tooltips-dlp8-resourcepack.zip
+          files: "*.zip"
           changelog: ${{ steps.changelog.outputs.changelog }}
-          loaders: fabric
+          loaders: datapack
           game-versions: 1.21.6
           version-type: release
           dependencies: |
