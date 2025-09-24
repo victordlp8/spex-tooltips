@@ -1,12 +1,6 @@
 {
   "pack": {
-    "description": "Tooltips DLP8 - SpEx Classes Configuration",
-    "pack_format": 71,
-    "supported_formats": {
-      "min_inclusive": 71,
-      "max_inclusive": 71
-    }
-  },
-  "name": "SpEx Classes Configuration",
-  "version": "0.1.0",
+    "description": "SpEx Classes Configuration - Tooltips DLP8",
+    "pack_format": 63
+  }
 }

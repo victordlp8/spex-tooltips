@@ -19,11 +19,11 @@ jobs:
 
       - name: Create resource pack zip
         run: |
-          # Extract name and version from pack.mcmeta
-          PACK_NAME=$(grep -o '"name": "[^"]*"' pack.mcmeta | cut -d'"' -f4 | tr -d ' ')
-          VERSION=$(grep -o '"version": "[^"]*"' pack.mcmeta | cut -d'"' -f4 | tr -d ' ')
+          # Extract name and version from info.json
+          PACK_NAME=$(grep -o '"name": "[^"]*"' info.json | cut -d'"' -f4 | tr -d ' ')
+          VERSION=$(grep -o '"version": "[^"]*"' info.json | cut -d'"' -f4 | tr -d ' ')
           FILENAME="${PACK_NAME}-${VERSION}.zip"
-          zip -r "$FILENAME" assets/ pack.mcmeta README.md
+          zip -r "$FILENAME" assets/ pack.mcmeta pack.png info.json README.md
           echo "filename=$FILENAME" >> $GITHUB_OUTPUT
 
       - name: Upload build artifacts
@@ -55,8 +55,8 @@ jobs:
           VERSION_WITHOUT_V=${GITHUB_REF_NAME#v}
           echo "version_without_v=$VERSION_WITHOUT_V" >> $GITHUB_OUTPUT
           
-          # Extract pack name from pack.mcmeta
-          PACK_NAME=$(grep -o '"name": "[^"]*"' pack.mcmeta | cut -d'"' -f4)
+          # Extract pack name from info.json
+          PACK_NAME=$(grep -o '"name": "[^"]*"' info.json | cut -d'"' -f4)
           echo "pack_name=$PACK_NAME" >> $GITHUB_OUTPUT
 
       - name: Generate Changelog
@@ -109,7 +109,7 @@ jobs:
           name: ${{ steps.set_version.outputs.pack_name }} ${{ steps.set_version.outputs.version_without_v }}
           files: "*.zip"
           changelog: ${{ steps.changelog.outputs.changelog }}
-          loaders: datapack
+          loaders: resourcepack
           game-versions: 1.21.6
           version-type: release
           dependencies: |
